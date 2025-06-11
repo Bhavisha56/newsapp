@@ -9,9 +9,7 @@ const AdminPage = () => {
 
   const getArticles = async () => {
     try {
-      const res = await axios.get(
-        'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0b47e17584cd47879b6656f2d8ae2754'
-      );
+      const res = await axios.get('/api/newapi');
       const data = res.data.articles.map((item, index) => ({
         ...item,
         id: index,

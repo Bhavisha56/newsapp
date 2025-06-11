@@ -8,9 +8,7 @@ const Card = ({ searchAuthor, searchDate }) => {
 
   const getNews = async () => {
     try {
-      const response = await axios.get(
-        'https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=0b47e17584cd47879b6656f2d8ae2754'
-      );
+      const response = await axios.get('/api/newapi');
       setNews(response.data.articles || []);
     } catch (error) {
       console.error('Error fetching news:', error);
